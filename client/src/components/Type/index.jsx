@@ -8,7 +8,7 @@ const Type = ({ id }) => {
 
     let emptyOption;
     if (defaultEmptyIDs.includes(id)) {
-        emptyOption = <option value=""></option>;
+        emptyOption = <option defaultValue=""></option>;
     }
 
     return (
