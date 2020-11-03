@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-const serverUrl = 'http://localhost:3000/api';
+const serverUrl = 'http://localhost:5000/api';
 
-export default {
+const API =  {
   getPokemon: function() {
     return axios.get(`${serverUrl}/pokemon`);
   },
@@ -10,3 +10,5 @@ export default {
     return axios.post(`${serverUrl}/pokemon`, pokemon);
   }
 }
+
+export default API;
