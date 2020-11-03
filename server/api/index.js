@@ -48,8 +48,9 @@ router.get('/pokemon', (req, res) => {
 });
 
 router.post('/pokemon', async (req, res) => {
-  const { name, description, type1, type2, image, moves } = req.body;
-  const hasMissingFields = !name || !description || !type1 || !image || !moves
+  const { pokemon } = req.body;
+  const { name, description, type1, type2, image, moves } = pokemon;
+  const hasMissingFields = !name || !description || !type1 || !image || !moves;
   const hasMoreThanFourMoves = moves && moves.length > 4;
   if(hasMissingFields || hasMoreThanFourMoves) {
     res.status(400).json({ error: 'Invalid input' });
