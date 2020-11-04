@@ -1,14 +1,30 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import Navbar from '../components/Navbar';
+import API from '../API';
 import './style.css';
 
 /**
  * Component for the view pokemon page
  */
 const ViewPokemon = () => {
+    const [body, setBody] = useState([]);
+    const [count, setCount] = useState(0);
+
+    useEffect(() => {
+       API.getPokemon()
+       .then((response) => {
+           setBody(response.data.pokemon);
+       })
+    }, []);
+
+    const logPokemon = () => {
+        console.log(JSON.stringify(body));
+    }
+
     return (
         <div>
             <Navbar />
+            <button onClick={logPokemon}>Log Pokemon</button>
             <div className="pokemon">
                 <h2>Torchic</h2>
                 <img src="https://i.pinimg.com/originals/03/94/dc/0394dc888f790a94f316f6ca7132a60d.gif" width="500" />

@@ -1,16 +1,57 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Type from '../components/Type';
+import API from '../API';
 import './style.css';
 
 /**
  * Component for the create pokemon page
  */
 const CreatePokemon = () => {
+
+    const handleCreatePokemon = async (e) => {
+        e.preventDefault();
+        const req = e.target;
+        const payload = {
+            pokemon: {
+                name: req.name.value,
+                description: req.desc.value,
+                image: "https://www.google.com",
+                type1: req.type1.value,
+                type2: req.type2.value,
+                moves: [
+                    {
+                        name: req.move1.value,
+                        type: req.move1type.value,
+                        power: req.move1power.value
+                    },
+                    {
+                        name: req.move2.value,
+                        type: req.move2type.value,
+                        power: req.move2power.value
+                    },
+                    {
+                        name: req.move3.value,
+                        type: req.move3type.value,
+                        power: req.move3power.value
+                    },
+                    {
+                        name: req.move4.value,
+                        type: req.move4type.value,
+                        power: req.move4power.value
+                    }
+                ]
+            }
+        };
+        console.log(JSON.stringify(payload))
+        await API.createPokemon(payload);
+        alert("Success");
+    };
+
     return (
         <div>
             <Navbar />
-            <form className="create-page">
+            <form onSubmit={handleCreatePokemon} className="create-page">
                 <div className="pokemon-form">
                     <h2>Create a Pokemon</h2>
                     <div className="form-row">
