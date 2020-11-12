@@ -15,10 +15,9 @@ router.get('/pokemon/:id', async (req, res) => {
 })
 
 router.post('/pokemon', async (req, res) => {
-  const { name, description, type1, type2, image, moves } = req.body;
-  const newPokemon = { name, description, image, type1, type2, moves };
-  const pokemon = await Pokemon.create(newPokemon);
-  res.status(200).json({ pokemon });
+  const { pokemon } = req.body;
+  const newPokemon = await Pokemon.create(pokemon);
+  res.status(200).json({ pokemon: newPokemon });
 })
 
 module.exports = router;
