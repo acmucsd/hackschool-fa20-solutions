@@ -1,0 +1,91 @@
+.view-pokemons-header {
+    margin-left: 2vw;
+}
+
+.pokemon-filter {
+    margin-left: 2vw;
+    margin-bottom: 0;
+}
+
+.pokemon-empty-result {
+    margin-left: 2vw;
+    border: 2px solid #7171CF;
+    background-color: #7171CF;
+    border-radius: 5px;
+    max-width: 400px;
+}
+
+.pokemon-empty-result-inner {
+    color: white;
+    padding: 1vw;
+}
+
+.pokemon-empty-result-inner a {
+    color: #BFBF41;
+}
+
+.pokemon-empty-result-inner a:visited {
+    color: #BFBF41;
+}
+
+label {
+    margin: 0 5px;
+}
+
+.create-page {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.drawing {
+    width: 35%;
+}
+
+.canvas {
+    border: 1px solid black;
+    height: 500px;
+    width: 500px;
+    margin: auto;
+}
+
+.canvas-options {
+    display: flex;
+    justify-content: center;
+}
+
+.canvas-options button {
+    margin: 5px;
+}
+
+.color-picker {
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+}
+
+.pokemon-form {
+    border: 1px solid black;
+    padding: 20px;
+    width: 35%;
+}
+
+.name-row {
+    margin-bottom: 16px;
+}
+
+.name-row button {
+    margin-left: 10px;
+}
+
+.desc-row {
+    margin-bottom: 16px;
+}
+
+.type-row {
+    margin-bottom: 16px;
+}
+
+.move-row {
+    margin-bottom: 16px;
+}
