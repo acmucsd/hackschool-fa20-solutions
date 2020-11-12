@@ -15,12 +15,6 @@ router.get('/pokemon/:id', async (req, res) => {
   res.status(200).json({ pokemon });
 })
 
-router.get('/pokemonName', async (req, res) => {
-  const response =  await axios.get(config.rng_url);
-  const pokemonName = response.data[0];
-  res.status(200).json({ pokemonName });
-})
-
 router.post('/pokemon', async (req, res) => {
   const { name, description, type1, type2, image, moves } = req.body;
   const newPokemon = { name, description, image, type1, type2, moves };
