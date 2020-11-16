@@ -52,15 +52,6 @@ const CreatePokemon = () => {
         history.push("/view");
     };
 
-    /**
-     * Method to generate a random Pokemon name.
-     */
-    const randName = async () => {
-        // use some API to generate random pokemon name
-        const randName = await API.getPokemonName();
-        setName(randName.data);
-    };
-
     return (
         <div>
             <Navbar />
@@ -98,10 +89,6 @@ const CreatePokemon = () => {
                     <div className="name-row">
                         <label htmlFor="name">Name</label>
                         <input type="text" id="name" name="name" defaultValue={name} required></input>
-                        <button type="button" onClick={(e) => {
-                            e.preventDefault();
-                            randName();
-                        }}>Generate Random Name</button>
                     </div>
                     <div className="desc-row">
                         <label htmlFor="desc">Description</label>

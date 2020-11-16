@@ -7,34 +7,6 @@ const PokemonCard = (props) => {
 
     const loadableCanvas = useRef();
 
-    /* Color object to display different colors for each type */
-    const colors = {
-        Normal: "#555555",
-        Fire: "#ff00ff",
-        Water: "#0000ff",
-        Grass: "#00ff00",
-        Electric: "#ffff00",
-        Psychic: "#ff00ff",
-        Ice: "#99ccff",
-        Dragon: "#ff9933",
-        Dark: "#cc0099",
-        Fairy: "#ff99cc",
-        Fighting: "#cc3300",
-        Flying: "#66ccff",
-        Posion: "#cc99ff",
-        Ground: "#cc7400",
-        Rock: "666699",
-        Bug: "#339933",
-        Ghost: "#cccccc",
-        Steel: "#999999"
-    };
-
-    /* Changes font color based on the pokemon type */
-    const getStyle = (type) => {
-        if (type == null) { return {}; }
-        return { color: colors[type] };
-    }
-
     /* Displays all moves by the pokemon */
     let pokemonMoves = props.moves.map((move, i) => {
         return <Move key={i} name={move.name} type={move.type} power={move.power} />
@@ -70,8 +42,8 @@ const PokemonCard = (props) => {
                     <p className="pokemoncard-name"> {props.name}</p>
                     <p className="pokemon-description">{props.description}</p>
                     <p className="pokemon-types">
-                        <span className="pokemon-type-1" style={getStyle(props.type1)}>{props.type1}</span> {'\u00A0'}
-                        <span className="pokemon-type-2" style={getStyle(props.type2)}>{props.type2}</span>
+                        <span className="pokemon-type-1" >{props.type1}</span> {'\u00A0'}
+                        <span className="pokemon-type-2" >{props.type2}</span>
                     </p>
                     <p className="pokemoncard-bold">Moves: </p>
                     <table className="moves-table">
