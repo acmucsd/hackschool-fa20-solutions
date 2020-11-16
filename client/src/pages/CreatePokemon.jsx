@@ -9,7 +9,6 @@ import Type from '../components/Type';
 
 const CreatePokemon = () => {
     let history = useHistory();
-    const [name, setName] = useState('');
     const [color, setColor] = useState('#000');
     const canvasInput = useRef();
 
@@ -88,7 +87,7 @@ const CreatePokemon = () => {
                     <h2>Create a Pokemon</h2>
                     <div className="name-row">
                         <label htmlFor="name">Name</label>
-                        <input type="text" id="name" name="name" defaultValue={name} required></input>
+                        <input type="text" id="name" name="name" required></input>
                     </div>
                     <div className="desc-row">
                         <label htmlFor="desc">Description</label>
