@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import PokemonCard from '../components/PokemonCard/PokemonCard';
+import PokemonCard from '../components/PokemonCard';
 import Navbar from '../components/Navbar';
 import API from '../API';
 import './style.css';

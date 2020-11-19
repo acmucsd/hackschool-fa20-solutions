@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import Move from '../Move/Move';
+import Move from '../Move';
 import './style.css';
 import CanvasDraw from 'react-canvas-draw';
 
