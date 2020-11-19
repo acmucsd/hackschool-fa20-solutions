@@ -19,33 +19,35 @@ const CreatePokemon = () => {
         e.preventDefault();
         const req = e.target;
         const payload = {
-            name: req.name.value,
-            desc: req.desc.value,
-            image: canvasInput.current.getSaveData(),
-            type1: req.type1.value,
-            type2: req.type2.value,
-            moves: [
-                {
-                    name: req.move1.value,
-                    type: req.move1type.value,
-                    power: req.move1power.value
-                },
-                {
-                    name: req.move2.value,
-                    type: req.move2type.value,
-                    power: req.move2power.value
-                },
-                {
-                    name: req.move3.value,
-                    type: req.move3type.value,
-                    power: req.move3power.value
-                },
-                {
-                    name: req.move4.value,
-                    type: req.move4type.value,
-                    power: req.move4power.value
-                }
-            ]
+            pokemon: {
+                name: req.name.value,
+                desc: req.desc.value,
+                image: canvasInput.current.getSaveData(),
+                type1: req.type1.value,
+                type2: req.type2.value,
+                moves: [
+                    {
+                        name: req.move1.value,
+                        type: req.move1type.value,
+                        power: req.move1power.value
+                    },
+                    {
+                        name: req.move2.value,
+                        type: req.move2type.value,
+                        power: req.move2power.value
+                    },
+                    {
+                        name: req.move3.value,
+                        type: req.move3type.value,
+                        power: req.move3power.value
+                    },
+                    {
+                        name: req.move4.value,
+                        type: req.move4type.value,
+                        power: req.move4power.value
+                    }
+                ]
+            }
         };
         await API.createPokemon(payload);
         history.push("/view");
